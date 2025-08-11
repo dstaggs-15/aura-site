@@ -2,27 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Aura — Feed</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="app.js"></script>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="topbar">
-    <h1>Aura</h1>
-    <nav>
-      <a href="index.html" aria-current="page">Feed</a>
-      <a href="new.html">New Post</a>
-      <a href="profile.html">Profile</a>
-      <a href="login.html" id="loginLink">Login</a>
-    </nav>
+  <!-- Header -->
+  <?-- copy the shared header here if you use templating. If not, paste the block directly: -->
+  <header>
+    <div class="nav">
+      <div class="brand">Aura</div>
+      <a class="pill" href="index.html">Feed</a>
+      <a class="pill" href="new.html">New Post</a>
+      <a class="pill" href="profile.html">Profile</a>
+      <div class="spacer"></div>
+      <a class="btn ghost" id="navLogin" href="login.html">Login</a>
+      <button class="btn danger small" id="logoutBtn" style="display:none">Logout</button>
+    </div>
   </header>
 
-  <main class="container">
-    <div id="feed" class="feed">
-      <!-- Posts will be injected here later -->
-      <p class="muted">Feed loading… (API hooks come later)</p>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <div class="card">
+          <div class="section-title">Feed</div>
+          <div id="feed"></div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="card">
+          <div class="section-title">How it works</div>
+          <p class="muted">Post situations (optionally with an image). People vote using -10 to +50. Your total aura updates as votes come in.</p>
+        </div>
+      </div>
     </div>
-  </main>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
