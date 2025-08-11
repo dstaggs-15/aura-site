@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aura — New Post</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1>Aura</h1>
+    <nav>
+      <a href="index.html">Feed</a>
+      <a href="new.html" aria-current="page">New Post</a>
+      <a href="profile.html">Profile</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Create a Post</h2>
+      <form id="newPostForm" enctype="multipart/form-data">
+        <label>Description
+          <textarea name="text" rows="4" maxlength="400" required placeholder="What happened?"></textarea>
+        </label>
+        <label>Images (up to 3)
+          <input name="images" id="postImages" type="file" accept="image/jpeg,image/png,image/webp" multiple />
+        </label>
+        <button type="submit">Post</button>
+      </form>
+      <p class="muted">+50/−10 votes may require a photo later.</p>
+    </section>
+  </main>
+</body>
+</html>
