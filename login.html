@@ -2,40 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Aura — Login / Signup</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="app.js"></script>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aura — Login</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="topbar">
-    <h1>Aura</h1>
-    <nav>
-      <a href="index.html">Feed</a>
-      <a href="new.html">New Post</a>
-      <a href="profile.html">Profile</a>
-      <a href="login.html" aria-current="page">Login</a>
-    </nav>
+  <header>
+    <div class="nav">
+      <div class="brand">Aura</div>
+      <a class="pill" href="index.html">Feed</a>
+      <a class="pill" href="new.html">New Post</a>
+      <a class="pill" href="profile.html">Profile</a>
+      <div class="spacer"></div>
+      <a class="btn ghost" id="navLogin" href="login.html">Login</a>
+      <button class="btn danger small" id="logoutBtn" style="display:none">Logout</button>
+    </div>
   </header>
 
-  <main class="container">
-    <section class="card">
-      <h2>Login</h2>
-      <form id="loginForm">
-        <label>Username <input name="username" required /></label>
-        <label>Password <input name="password" type="password" required /></label>
-        <button type="submit">Login</button>
-      </form>
-    </section>
+  <div class="wrap">
+    <div class="grid" style="grid-template-columns:1fr">
+      <div class="card">
+        <div class="section-title">Login</div>
+        <form id="loginForm" style="padding:12px">
+          <label>Username</label>
+          <input name="username" required />
+          <label>Password</label>
+          <input name="password" type="password" required />
+          <div class="row" style="margin-top:12px">
+            <button class="btn primary" type="submit">Login</button>
+          </div>
+        </form>
+      </div>
 
-    <section class="card">
-      <h2>Sign up</h2>
-      <form id="signupForm">
-        <label>Username <input name="username" required /></label>
-        <label>Password <input name="password" type="password" required /></label>
-        <button type="submit">Create account</button>
-      </form>
-    </section>
-  </main>
+      <div class="card">
+        <div class="section-title">Sign up</div>
+        <form id="signupForm" style="padding:12px">
+          <label>Username</label>
+          <input name="username" required minlength="3" maxlength="20" />
+          <label>Password</label>
+          <input name="password" type="password" required minlength="6" />
+          <div class="row" style="margin-top:12px">
+            <button class="btn" type="submit">Create account</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
