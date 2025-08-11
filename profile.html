@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aura — Profile</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1>Aura</h1>
+    <nav>
+      <a href="index.html">Feed</a>
+      <a href="new.html">New Post</a>
+      <a href="profile.html" aria-current="page">Profile</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2 id="profileUsername">@username</h2>
+      <div class="stats">
+        <div><strong id="profileAura">0</strong><span>Total Aura</span></div>
+        <div><strong id="profileStreak">0</strong><span>Streak</span></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h3>Posts</h3>
+      <div id="profilePosts" class="feed"></div>
+    </section>
+  </main>
+</body>
+</html>
