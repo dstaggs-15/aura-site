@@ -2,35 +2,66 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Aura — Profile</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="app.js"></script>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="topbar">
-    <h1>Aura</h1>
-    <nav>
-      <a href="index.html">Feed</a>
-      <a href="new.html">New Post</a>
-      <a href="profile.html" aria-current="page">Profile</a>
-      <a href="login.html">Login</a>
-    </nav>
+  <header>
+    <div class="nav">
+      <div class="brand">Aura</div>
+      <a class="pill" href="index.html">Feed</a>
+      <a class="pill" href="new.html">New Post</a>
+      <a class="pill" href="profile.html">Profile</a>
+      <div class="spacer"></div>
+      <a class="btn ghost" id="navLogin" href="login.html">Login</a>
+      <button class="btn danger small" id="logoutBtn" style="display:none">Logout</button>
+    </div>
   </header>
 
-  <main class="container">
-    <section class="card">
-      <h2 id="profileUsername">@username</h2>
-      <div class="stats">
-        <div><strong id="profileAura">0</strong><span>Total Aura</span></div>
-        <div><strong id="profileStreak">0</strong><span>Streak</span></div>
-      </div>
-    </section>
+  <div class="wrap">
+    <div class="grid">
+      <div class="right" style="grid-column:1/-1">
+        <div class="card">
+          <img id="bannerImg" class="banner" alt="Banner" />
+          <div class="row" style="margin-top:-36px; padding-left:10px">
+            <img id="avatarImg" class="avatar" alt="Avatar" />
+            <div>
+              <div id="profileUsername" style="font-weight:800; font-size:20px">@guest</div>
+              <div class="row muted" style="gap:22px; margin-top:6px">
+                <div><span id="profileAura">0</span> Total Aura</div>
+                <div><span id="profileStreak">0</span> Streak</div>
+              </div>
+            </div>
+          </div>
 
-    <section class="card">
-      <h3>Posts</h3>
-      <div id="profilePosts" class="feed"></div>
-    </section>
-  </main>
+          <div style="margin-top:12px">
+            <div class="section-title">Badges</div>
+            <div id="badges">
+              <span class="badge">Founder</span>
+              <span class="badge">Day 1</span>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:14px; padding:12px">
+            <div class="section-title">Edit profile visuals</div>
+            <form id="profileMediaForm">
+              <label>Banner image</label>
+              <input type="file" id="bannerFile" accept="image/*" />
+              <label style="margin-top:10px">Avatar image</label>
+              <input type="file" id="avatarFile" accept="image/*" />
+              <div class="row" style="margin-top:12px">
+                <button class="btn small" id="saveProfileMedia">Save Images</button>
+                <span class="muted" id="profileMediaStatus"></span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
