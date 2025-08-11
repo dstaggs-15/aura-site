@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aura — Login / Signup</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1>Aura</h1>
+    <nav>
+      <a href="index.html">Feed</a>
+      <a href="new.html">New Post</a>
+      <a href="profile.html">Profile</a>
+      <a href="login.html" aria-current="page">Login</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <label>Username <input name="username" required /></label>
+        <label>Password <input name="password" type="password" required /></label>
+        <button type="submit">Login</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Sign up</h2>
+      <form id="signupForm">
+        <label>Username <input name="username" required /></label>
+        <label>Password <input name="password" type="password" required /></label>
+        <button type="submit">Create account</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
